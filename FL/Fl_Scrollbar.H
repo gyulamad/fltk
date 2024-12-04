@@ -68,7 +68,7 @@ public:
     \see Fl_Scrollbar::value()
     \see Fl_Scrollbar::value(int pos, int size, int first, int total)
   */
-  int value(int p) {return int(Fl_Slider::value((double)p));}
+  int value(int p) {return Fl_Slider::value((double)p);}
 
   /**
     Sets the position, size and range of the slider in the scrollbar.

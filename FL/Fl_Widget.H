@@ -808,7 +808,7 @@ public:
 
     \see user_data()
   */
-  long argument() const {return (long)(fl_intptr_t)user_data_;}
+  long argument() const {return (fl_intptr_t)user_data_;}
 
   /** Sets the current user data (long) argument that is passed to the callback function.
 
@@ -905,7 +905,7 @@ public:
       You must still redraw the parent widget to see a change in the
       window. Normally you want to use the show() method instead.
    */
-  void set_visible() {flags_ &= ~INVISIBLE;}
+  void set_visible() {flags_ &= ~(unsigned int)INVISIBLE;}
 
   /** Hides the widget.
       You must still redraw the parent to see a change in the window.
@@ -966,7 +966,7 @@ public:
   /** Sets a widget to accept input.
       \see set_output(), output()
    */
-  void clear_output() {flags_ &= ~OUTPUT;}
+  void clear_output() {flags_ &= ~(unsigned int)OUTPUT;}
 
   /** Returns if the widget is able to take events.
       This is the same as (active() && !output() && visible())
@@ -1003,7 +1003,7 @@ public:
   /** Marks the value of the widget as unchanged.
       \see changed(), set_changed()
    */
-  void clear_changed() {flags_ &= ~CHANGED;}
+  void clear_changed() {flags_ &= ~(unsigned int)CHANGED;}
 
   /** Marks the widget as inactive without sending events or changing focus.
       This is mainly for specialized use, for normal cases you want deactivate().
@@ -1015,7 +1015,7 @@ public:
       This is mainly for specialized use, for normal cases you want activate().
       \see activate()
    */
-  void set_active() {flags_ &= ~INACTIVE;}
+  void set_active() {flags_ &= ~(unsigned int)INACTIVE;}
 
   /** Gives the widget the keyboard focus.
       Tries to make this widget be the Fl::focus() widget, by first sending
@@ -1038,7 +1038,7 @@ public:
       Normally, all widgets participate in keyboard focus navigation.
       \see set_visible_focus(), visible_focus(), visible_focus(int)
    */
-  void clear_visible_focus() { flags_ &= ~VISIBLE_FOCUS; }
+  void clear_visible_focus() { flags_ &= ~(unsigned int)VISIBLE_FOCUS; }
 
   /** Modifies keyboard focus navigation.
       \param[in] v set or clear visible focus
@@ -1109,7 +1109,7 @@ public:
   static int test_shortcut(const char*, const bool require_alt = false);
   /* Internal use only. */
   void _set_fullscreen() {flags_ |= FULLSCREEN;}
-  void _clear_fullscreen() {flags_ &= ~FULLSCREEN;}
+  void _clear_fullscreen() {flags_ &= ~(unsigned int)FULLSCREEN;}
 
   /** Checks if w is a child of this widget.
       \param[in] w potential child widget

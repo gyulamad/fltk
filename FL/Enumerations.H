@@ -1241,7 +1241,7 @@ inline Fl_Color fl_rgb_color(uchar g) {
    fl_gray_ramp(I * (FL_NUM_GRAY - 1) / 255)
  \endcode
 */
-inline Fl_Color fl_gray_ramp(int i) {return (Fl_Color)(i+FL_GRAY_RAMP);}
+inline Fl_Color fl_gray_ramp(unsigned int i) {return (i+FL_GRAY_RAMP);}
 
 /** Returns a color out of the color cube.
 
@@ -1257,8 +1257,8 @@ inline Fl_Color fl_gray_ramp(int i) {return (Fl_Color)(i+FL_GRAY_RAMP);}
        B * (FL_NUM_BLUE - 1) / 255);
   \endcode
  */
-inline Fl_Color fl_color_cube(int r, int g, int b) {
-  return (Fl_Color)((b*FL_NUM_RED + r) * FL_NUM_GREEN + g + FL_COLOR_CUBE);}
+inline Fl_Color fl_color_cube(unsigned int r,unsigned int g,unsigned int b) {
+  return ((b*FL_NUM_RED + r) * FL_NUM_GREEN + g + FL_COLOR_CUBE);}
 
 /**@}*/          // group: Colors
 

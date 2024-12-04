@@ -108,7 +108,8 @@ public:
     \return     pointer to the n'th child or NULL if out of range
   */
   Fl_Widget *child(int n) const {
-    if (n < 0 || n > children() - 1) return NULL;
+    int child_count = children();
+    if (n < 0 || n >= child_count) return NULL;
     return array()[n];
   }
 

@@ -161,7 +161,7 @@ public:
   void down_box(Fl_Boxtype b) {down_box_ = b;}
 
   /// (for backwards compatibility)
-  void shortcut(const char *s) {shortcut(fl_old_shortcut(s));}
+  void shortcut(const char *s) {shortcut((signed)fl_old_shortcut(s));}
 
   /// (for backwards compatibility)
   Fl_Color down_color() const {return selection_color();}

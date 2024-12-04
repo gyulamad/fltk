@@ -22,11 +22,11 @@
 
 inline char fl_char(void *v)             { return (char)(fl_intptr_t)v; }
 inline int  fl_int(void *v)              { return (int)(fl_intptr_t)v; }
-inline long fl_long(void *v)             { return (long)(fl_intptr_t)v; }
+inline long fl_long(void *v)             { return (fl_intptr_t)v; }
 
 inline unsigned char fl_uchar(void *v)   { return (unsigned char)(fl_uintptr_t)v; }
 inline unsigned int  fl_uint(void *v)    { return (unsigned int)(fl_uintptr_t)v; }
-inline unsigned long fl_ulong(void *v)   { return (unsigned long)(fl_uintptr_t)v; }
+inline unsigned long fl_ulong(void *v)   { return (fl_uintptr_t)v; }
 
 // the following conversions can be used to silence MSVC warning C4312:
 // 'type cast': conversion from '<type>' to 'void *' of greater size
